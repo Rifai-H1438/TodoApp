@@ -10,23 +10,23 @@ import lombok.Data;
 @Data
 public class Task {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-  private String title;
+    private String title;
 
-  private boolean completed;
+    private boolean completed;
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-  public void setCompleted(boolean completed) {
-    this.completed = completed;
-  }
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
 
-  public boolean isCompleted() {
-    return this.completed;
-  }
+    public boolean isCompleted() {
+        return this.completed;
+    }
 }

@@ -20,11 +20,12 @@ public class TaskController {
 
 
     @GetMapping
-    public String getTasks(Model model){
+    public String getTasks(Model model) {
         List<Task> tasks = taskService.getAllTasks();
         model.addAttribute("tasks", tasks);
         return "tasks";
     }
+
     @PostMapping
     public String createTasks(@RequestParam String title) {
         System.out.println("Received title: " + title);
@@ -37,13 +38,13 @@ public class TaskController {
 
 
     @GetMapping("/{id}/delete")
-    public String deleteTask(@PathVariable Long id){
+    public String deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
         return "redirect:/";
     }
 
     @GetMapping("/{id}/toggle")
-    public String toggleTask(@PathVariable Long id){
+    public String toggleTask(@PathVariable Long id) {
         taskService.toggleTask(id);
         return "redirect:/";
     }

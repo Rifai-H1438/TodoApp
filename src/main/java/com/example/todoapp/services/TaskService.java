@@ -35,10 +35,9 @@ public class TaskService {
     }
 
     public void toggleTask(Long id) {
-       Task task =  taskRepository.findById(id)
-               .orElseThrow(()-> new IllegalArgumentException("Invalid task id"));
+        Task task = taskRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid task id"));
         task.setCompleted(!task.isCompleted());
-       taskRepository.save(task);
+        taskRepository.save(task);
 
     }
 }
